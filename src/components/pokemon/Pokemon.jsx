@@ -105,7 +105,8 @@ class Pokemon extends Component {
     }
 
     const color = pokemonSpeciesData.color.name;
-    const imageSrc = `../sprites/` + pokemonIndex + ".png";
+    const imgsrc = `/sprites/` + pokemonIndex + ".png";
+    const imageSrc = process.env.PUBLIC_URL + imgsrc;
     const habitat = pokemonSpeciesData.habitat.name;
     const shape = pokemonSpeciesData.shape.name;
     const genderRatioFemale = pokemonSpeciesData.gender_rate * 12.5;
