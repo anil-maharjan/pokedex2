@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "./components/layout/NavBar";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import Pokemon from "./components/pokemon/Pokemon";
 import "./App.css";
 import Dashboard from "./components/layout/dashboard";
@@ -10,7 +10,7 @@ import Search from "./components/search/Search";
 class App extends Component {
   render() {
     return (
-      <Router>
+      <HashRouter basename="{process.env.PUBLIC_URL">
         <div className="App">
           <NavBar />
           <div className="poke-container">
@@ -22,7 +22,7 @@ class App extends Component {
             </Switch>
           </div>
         </div>
-      </Router>
+      </HashRouter>
     );
   }
 }
