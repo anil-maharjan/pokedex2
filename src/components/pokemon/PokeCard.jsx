@@ -10,7 +10,7 @@ class PokeCard extends Component {
   componentDidMount() {
     const { name, url } = this.props;
     const pokemonIndex = url.split("/")[url.split("/").length - 2];
-    const imageSrc = `../sprites/` + pokemonIndex + ".png";
+    const imageSrc = `/sprites/` + pokemonIndex + ".png";
     this.setState({ name, imageSrc, pokemonIndex });
   }
 
@@ -20,7 +20,7 @@ class PokeCard extends Component {
         <p className="pokemon-index"># {this.state.pokemonIndex}</p>
         <div className="poke-card-img-body">
           <img
-            src={this.state.imageSrc}
+            src={process.env.PUBLIC_URL + this.state.imageSrc}
             alt="Pokemon"
             className="poke-card-img"
           />
